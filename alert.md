@@ -15,7 +15,7 @@ El componente `src/components/sections/Contact.tsx` usa EmailJS pero **no funcio
    - `{{from_name}}` — nombre del remitente
    - `{{from_email}}` — email del remitente
    - `{{message}}` — mensaje
-   - `{{to_name}}` — tu nombre (valor fijo en el template)
+   - `{{to_name}}` — tu nombre (valor fijo en el template)a
 4. Copiar los IDs:
    - **Service ID** (ej: `service_abc123`)
    - **Template ID** (ej: `template_xyz789`)
