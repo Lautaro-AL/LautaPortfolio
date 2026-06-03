@@ -38,11 +38,11 @@ export default function Footer() {
       </div>
 
       {/* Giant name — Sirnik-style */}
-      <div className="px-4 md:px-8 pb-2 -mb-2 overflow-hidden">
+      <div className="pb-2 -mb-2 overflow-hidden w-full">
         <p
-          className="font-display font-black leading-none text-text-primary select-none md:whitespace-nowrap"
+          className="font-display font-black leading-none text-text-primary select-none whitespace-nowrap"
           style={{
-            fontSize: "clamp(4rem, 14vw, 15rem)",
+            fontSize: "clamp(4rem, 16.5vw, 999rem)",
             letterSpacing: "0.06em",
             opacity: 0.07,
           }}
