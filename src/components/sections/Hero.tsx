@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { useLanguage } from "../../i18n/context";
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 import HeroPhoto from "../ui/HeroPhoto";
+import StatusPill from "../ui/StatusPill";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -37,10 +38,7 @@ export default function Hero() {
 
           {/* Availability + location */}
           <div style={fadeUp(80)} className="flex items-center gap-2.5 mb-10 flex-wrap">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
-            <span className="font-mono text-xs text-text-secondary tracking-widest uppercase">
-              {t.hero.availability}
-            </span>
+            <StatusPill>{t.hero.availability}</StatusPill>
             <span className="font-mono text-xs text-border-color mx-0.5">·</span>
             <span className="font-mono text-xs text-text-secondary tracking-wide">
               {t.hero.location}
@@ -82,7 +80,7 @@ export default function Hero() {
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
               {displayRole}
             </span>
-            <span className="text-accent-cyan animate-pulse font-thin text-base leading-none">|</span>
+            <span className="text-accent-2 animate-ds-pulse-fast font-thin text-base leading-none">|</span>
           </div>
 
           {/* Description */}
@@ -128,11 +126,19 @@ export default function Hero() {
               LinkedIn ↗
             </a>
             <a
+              href="https://routeev.uy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-text-secondary hover:text-text-primary transition-colors duration-200 tracking-wide"
+            >
+              routeev.uy ↗
+            </a>
+            <a
               href="/cv/Lautaro_Álvarez_Sanchez_CV.pdf"
               download
               className="font-mono text-xs text-text-secondary hover:text-text-primary transition-colors duration-200 tracking-wide"
             >
-              {t.hero.ctaCV} ↓
+              {t.cv} ↓
             </a>
           </div>
         </div>

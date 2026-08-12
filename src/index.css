@@ -42,20 +42,8 @@
 
   .hero-bg {
     background:
-      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(79, 142, 247, 0.08) 0%, transparent 70%),
-      radial-gradient(circle at 85% 85%, rgba(100, 255, 218, 0.03) 0%, transparent 40%);
-  }
-
-  /* Section divider line */
-  .section-line {
-    @apply h-px w-full bg-border-color;
-  }
-
-  /* Editorial section number */
-  .section-num {
-    @apply font-bold text-border-color select-none leading-none;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: clamp(5rem, 12vw, 9rem);
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 107, 53, 0.08) 0%, transparent 70%),
+      radial-gradient(circle at 85% 85%, rgba(242, 193, 78, 0.035) 0%, transparent 40%);
   }
 }
 

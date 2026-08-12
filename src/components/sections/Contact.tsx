@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "../../i18n/context";
+import SectionHeader from "../ui/SectionHeader";
+import Field from "../ui/Field";
+import Button from "../ui/Button";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -37,31 +40,20 @@ export default function Contact() {
     }
   }
 
-  const inputClass =
-    "w-full bg-transparent border-b border-border-color focus:border-text-secondary outline-none py-3 font-body text-sm text-text-primary placeholder:text-text-secondary transition-colors duration-200";
+  const directLinks = [
+    { label: "Email", href: "mailto:brunola365@gmail.com", display: "brunola365@gmail.com" },
+    { label: "GitHub", href: "https://github.com/Lautaro-AL", display: "github.com/Lautaro-AL" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lautaro-alvarez-sanchez/", display: "lautaro-alvarez-sanchez" },
+  ];
 
   return (
     <section id="contact" ref={sectionRef} className="section-padding">
-      {/* Section header */}
       <div
-        className="flex items-end justify-between mb-0 transition-all duration-700"
+        className="transition-all duration-700 mb-16"
         style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
       >
-        <div>
-          <h2
-            className="font-display font-bold text-text-primary leading-tight"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "-0.02em" }}
-          >
-            {t.contact.subtitle}
-          </h2>
-          <p className="font-mono text-xs text-text-secondary mt-2 tracking-wide max-w-sm">
-            {t.contact.description}
-          </p>
-        </div>
-        <span className="section-num">05</span>
+        <SectionHeader title={t.contact.title} subtitle={t.contact.description} number="06" />
       </div>
-
-      <div className="section-line mt-4 mb-16" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         {/* Form */}
@@ -71,19 +63,20 @@ export default function Contact() {
           className="flex flex-col gap-8 transition-all duration-700"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-16px)", transitionDelay: "100ms" }}
         >
-          <input type="text" name="from_name" required placeholder={t.contact.namePlaceholder} className={inputClass} />
-          <input type="email" name="from_email" required placeholder={t.contact.emailPlaceholder} className={inputClass} />
-          <textarea name="message" required rows={4} placeholder={t.contact.messagePlaceholder} className={`${inputClass} resize-none`} />
+          <Field type="text" name="from_name" required placeholder={t.contact.namePlaceholder} />
+          <Field type="email" name="from_email" required placeholder={t.contact.emailPlaceholder} />
+          <Field as="textarea" name="message" required rows={4} placeholder={t.contact.messagePlaceholder} />
 
           <div className="flex items-center justify-between">
-            <button
+            <Button
               type="submit"
+              variant="outline"
+              trailing="→"
               disabled={status === "sending" || status === "success"}
-              className="font-mono text-xs text-text-primary border border-border-color hover:border-text-secondary px-5 py-2.5 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200"
             >
-              {status === "sending" ? t.contact.sending : `${t.contact.send} →`}
-            </button>
-            {status === "success" && <p className="font-mono text-xs text-accent-cyan">{t.contact.success}</p>}
+              {status === "sending" ? t.contact.sending : t.contact.send}
+            </Button>
+            {status === "success" && <p className="font-mono text-xs text-success">{t.contact.success}</p>}
             {status === "error" && <p className="font-mono text-xs text-red-400">{t.contact.error}</p>}
           </div>
         </form>
@@ -97,17 +90,13 @@ export default function Contact() {
             {t.contact.orContact}
           </p>
 
-          {[
-            { label: "Email", href: "mailto:brunola365@gmail.com", display: "brunola365@gmail.com" },
-            { label: "GitHub", href: "https://github.com/Lautaro-AL", display: "github.com/Lautaro-AL" },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/lautaro-alvarez-sanchez/", display: "lautaro-alvarez-sanchez" },
-          ].map(({ label, href, display }) => (
+          {directLinks.map(({ label, href, display }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="group flex items-end justify-between py-5 border-b border-border-color hover:border-text-secondary transition-colors duration-200"
+              className="group flex items-end justify-between py-5 border-b border-border-color hover:border-border-strong transition-colors duration-200"
             >
               <div>
                 <p className="font-mono text-xs text-text-secondary mb-1">{label}</p>

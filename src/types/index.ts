@@ -24,3 +24,13 @@ export interface EducationItem {
   period: string;
   current?: boolean;
 }
+
+export interface WorkExperience {
+  name: string;
+  date: string;
+  url: string;
+  webRepoUrl: string;
+  apiRepoUrl: string;
+  frontendStack: string[];
+  apiStack: string[];
+}

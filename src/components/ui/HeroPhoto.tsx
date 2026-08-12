@@ -20,7 +20,7 @@ export default function HeroPhoto({ mounted }: HeroPhotoProps) {
       <div
         className="absolute inset-0 -z-10 blur-3xl"
         style={{
-          background: "radial-gradient(ellipse at center, rgba(79,142,247,0.09) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at center, rgba(255,107,53,0.09) 0%, transparent 70%)",
           transform: "scale(1.4)",
         }}
       />
@@ -41,7 +41,7 @@ export default function HeroPhoto({ mounted }: HeroPhotoProps) {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse at 35% 30%, rgba(79,142,247,0.06) 0%, transparent 60%), radial-gradient(circle at 75% 75%, rgba(100,255,218,0.04) 0%, transparent 45%)",
+                "radial-gradient(ellipse at 35% 30%, rgba(255,107,53,0.06) 0%, transparent 60%), radial-gradient(circle at 75% 75%, rgba(242,193,78,0.04) 0%, transparent 45%)",
             }}
           />
           <span
@@ -50,14 +50,14 @@ export default function HeroPhoto({ mounted }: HeroPhotoProps) {
               fontSize: "clamp(4rem, 8vw, 6.5rem)",
               letterSpacing: "-0.05em",
               lineHeight: 1,
-              color: "rgba(46,55,72,0.9)",
+              color: "rgba(51,44,35,0.9)",
             }}
           >
             LA
           </span>
           <span
             className="font-mono text-xs mt-3 tracking-[0.35em] relative"
-            style={{ color: "rgba(90,96,112,0.3)" }}
+            style={{ color: "rgba(138,128,120,0.4)" }}
           >
             FOTO
           </span>

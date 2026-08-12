@@ -2,6 +2,15 @@ import type { EducationItem } from "../types";
 
 export const educationItems: EducationItem[] = [
   {
+    institution: "RouteEV · routeev.uy",
+    degree: {
+      es: "Web y API de autos eléctricos en producción",
+      en: "Electric-car web and API in production",
+    },
+    period: "2026 —",
+    current: true,
+  },
+  {
     institution: "Universidad ORT Uruguay",
     degree: {
       es: "Analista en Tecnologías de la Información (ATI)",

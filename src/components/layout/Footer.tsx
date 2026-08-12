@@ -29,6 +29,14 @@ export default function Footer() {
             LinkedIn ↗
           </a>
           <a
+            href="https://routeev.uy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-text-secondary hover:text-text-primary transition-colors duration-200"
+          >
+            routeev.uy ↗
+          </a>
+          <a
             href="mailto:brunola365@gmail.com"
             className="font-mono text-xs text-text-secondary hover:text-text-primary transition-colors duration-200"
           >

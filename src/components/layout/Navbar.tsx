@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "../../i18n/context";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const NAV_SECTIONS = ["about", "skills", "projects", "education", "contact"] as const;
+const NAV_SECTIONS = ["work", "projects", "skills", "about", "education", "contact"] as const;
 type NavSection = (typeof NAV_SECTIONS)[number];
 
 export default function Navbar() {
@@ -91,9 +91,9 @@ export default function Navbar() {
           <a
             href="/cv/Lautaro_Álvarez_Sanchez_CV.pdf"
             download
-            className="hidden md:inline-flex items-center gap-1.5 font-mono text-xs text-text-secondary hover:text-text-primary border border-border-color hover:border-text-secondary px-3 py-1.5 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-1.5 font-mono text-xs text-text-secondary hover:text-text-primary border border-border-color hover:border-border-strong px-3 py-1.5 transition-all duration-200"
           >
-            {t.nav.downloadCV} ↓
+            {t.cv} ↓
           </a>
 
           {/* Mobile hamburger */}
@@ -130,7 +130,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="font-mono text-xs text-text-secondary"
               >
-                {t.nav.downloadCV} ↓
+                {t.cv} ↓
               </a>
             </li>
           </ul>

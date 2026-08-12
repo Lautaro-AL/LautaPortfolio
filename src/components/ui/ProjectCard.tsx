@@ -1,5 +1,6 @@
 import { FiGithub, FiArrowUpRight } from "react-icons/fi";
 import type { Project } from "../../types";
+import Tag from "./Tag";
 
 interface ProjectCardProps {
   project: Project;
@@ -72,12 +73,7 @@ export default function ProjectCard({ project, lang, index, labels, visible }: P
           {/* Stack */}
           <div className="flex flex-wrap gap-2">
             {project.stack.map((tech) => (
-              <span
-                key={tech}
-                className="font-mono text-xs text-text-secondary border border-border-color px-2 py-0.5"
-              >
-                {tech}
-              </span>
+              <Tag key={tech}>{tech}</Tag>
             ))}
           </div>
 

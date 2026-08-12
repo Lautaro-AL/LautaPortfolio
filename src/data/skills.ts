@@ -1,7 +1,7 @@
 import {
   SiJavascript,
   SiTypescript,
-  SiSharp,
+  SiOpenjdk,
   SiReact,
   SiVuedotjs,
   SiHtml5,
@@ -16,7 +16,8 @@ import {
   SiSwagger,
   SiJest,
 } from "react-icons/si";
-import { FiCode, FiDatabase, FiCloud, FiServer } from "react-icons/fi";
+import { DiMsqlServer } from "react-icons/di";
+import { TbBrandCSharp, TbBrandAzure, TbBrandAws } from "react-icons/tb";
 import type { IconType } from "react-icons";
 
 export interface Skill {
@@ -35,8 +36,8 @@ export const skillCategories: SkillCategoryData[] = [
     skills: [
       { name: "JavaScript", icon: SiJavascript },
       { name: "TypeScript", icon: SiTypescript },
-      { name: "C#", icon: SiSharp },
-      { name: "Java", icon: FiCode },
+      { name: "C#", icon: TbBrandCSharp },
+      { name: "Java", icon: SiOpenjdk },
     ],
   },
   {
@@ -59,7 +60,7 @@ export const skillCategories: SkillCategoryData[] = [
   {
     category: { es: "Bases de datos", en: "Databases" },
     skills: [
-      { name: "SQL Server", icon: FiDatabase },
+      { name: "SQL Server", icon: DiMsqlServer },
       { name: "MongoDB", icon: SiMongodb },
     ],
   },
@@ -76,8 +77,8 @@ export const skillCategories: SkillCategoryData[] = [
   {
     category: { es: "Cloud", en: "Cloud" },
     skills: [
-      { name: "Azure", icon: FiCloud },
-      { name: "AWS", icon: FiServer },
+      { name: "Azure", icon: TbBrandAzure },
+      { name: "AWS", icon: TbBrandAws },
     ],
   },
 ];

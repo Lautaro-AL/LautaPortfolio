@@ -31,5 +31,5 @@ Thumbs.db
 
 # Claude Code
 .claude/
-
+.alert.md
 .vercel
